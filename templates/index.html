@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* styles.css */
+  body {
+    background-image: url('https://images.unsplash.com/photo-1512699355324-f07e3106dae5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .form-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+  
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  
+  input, select, button {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  button {
+    grid-column: span 2;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .card {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .box {
+    width: 300px;
+    height: 200px;
+    background-color: #F9F9F9;
+    border: 2px solid #E1E1E1;
+    border-radius: 10px;
+    text-align: center;
+    margin: 50px auto;
+  }
+
+  p {
+    color: #999;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  </style>
+  <title>Real Estate Form</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card mt-5">
+          <div class="card-body">
+            <h1 class="text-center">Real Estate Form</h1>
+            <form action="/predict" method="POST">
+              <div class="mb-3">
+                <label for="listYear" class="form-label">List Year</label>
+                <input type="number" class="form-control" id="listYear" name="listYear">
+              </div>
+              <div class="mb-3">
+                <label for="yearRecorded" class="form-label">Year Recorded</label>
+                <input type="number" class="form-control" id="yearRecorded" name="yearRecorded">
+              </div>
+              <div class="mb-3">
+                <label for="assessedValue" class="form-label">Assessed Value</label>
+                <input type="number" class="form-control" id="assessedValue" name="assessedValue">
+              </div>
+              <div class="mb-3">
+                <label for="salesRatio" class="form-label">Sales Ratio</label>
+                <input type="float" class="form-control" id="salesRatio" name="salesRatio">
+              </div>
+              <div class="mb-3">
+                <label for="town" class="form-label">Town</label>
+                <select class="form-select" id="town" name="town">
+                    <option selected>Choose...</option>
+                    <option value="Avon">Avon</option>
+                    <option value="Berlin">Berlin</option>
+                    <option value="Bethel">Bethel</option>
+                    <option value="Branford">Branford</option>
+                    <option value="Bridgeport">Bridgeport</option>
+                    <option value="Bristol">Bristol</option>
+                    <option value="Cheshire">Cheshire</option>
+                    <option value="Danbury">Danbury</option>
+                    <option value="Darien">Darien</option>
+                    <option value="East Hartford">East Hartford</option>
+                    <option value="East Haven">East Haven</option>
+                    <option value="East Lyme">East Lyme</option>
+                    <option value="Enfield">Enfield</option>
+                    <option value="Fairfield">Fairfield</option>
+                    <option value="Farmington">Farmington</option>
+                    <option value="Glastonbury">Glastonbury</option>
+                    <option value="Greenwich">Greenwich</option>
+                    <option value="Groton">Groton</option>
+                    <option value="Guilford">Guilford</option>
+                    <option value="Hamden">Hamden</option>
+                    <option value="Hartford">Hartford</option>
+                    <option value="Killingly">Killingly</option>
+                    <option value="Madison">Madison</option>
+                    <option value="Manchester">Manchester</option>
+                    <option value="Meriden">Meriden</option>
+                    <option value="Middletown">Middletown</option>
+                    <option value="Milford">Milford</option>
+                    <option value="Monroe">Monroe</option>
+                    <option value="Naugatuck">Naugatuck</option>
+                    <option value="New Britain">New Britain</option>
+                    <option value="New Canaan">New Canaan</option>
+                    <option value="New Haven">New Haven</option>
+                    <option value="New London">New London</option>
+                    <option value="New Milford">New Milford</option>
+                    <option value="Newington">Newington</option>
+                    <option value="Newtown">Newtown</option>
+                    <option value="North Haven">North Haven</option>
+                    <option value="Norwalk">Norwalk</option>
+                    <option value="Norwich">Norwich</option>
+                    <option value="Ridgefield">Ridgefield</option>
+                    <option value="Shelton">Shelton</option>
+                    <option value="Simsbury">Simsbury</option>
+                    <option value="South Windsor">South Windsor</option>
+                    <option value="Southbury">Southbury</option>
+                    <option value="Southington">Southington</option>
+                    <option value="Stamford">Stamford</option>
+                    <option value="Stonington">Stonington</option>
+                    <option value="Stratford">Stratford</option>
+                    <option value="Torrington">Torrington</option>
+                    <option value="Trumbull">Trumbull</option>
+                    <option value="Vernon">Vernon</option>
+                    <option value="Wallingford">Wallingford</option>
+                    <option value="Waterbury">Waterbury</option>
+                    <option value="Waterford">Waterford</option>
+                    <option value="West Hartford">West Hartford</option>
+                    <option value="West Haven">West Haven</option>
+                    <option value="Westport">Westport</option>
+                    <option value="Wethersfield">Wethersfield</option>
+                    <option value="Windsor">Windsor</option>
+                  </select>
+              </div>
+              <div class="mb-3">
+                <label for="propertyType" class="form-label">Property Type</label>
+                <select class="form-select" id="propertyType" name="propertyType">
+                    <option selected>Choose...</option>
+                    <option value="condo">Condo</option>
+                    <option value="fourFamily">Four Family</option>
+                    <option value="residential">Residential</option>
+                    <option value="singleFamily">Single Family</option>
+                    <option value="threeFamily">Three Family</option>
+                    <option value="twoFamily">Two Family</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="residentialType" class="form-label">Residential Type</label>
+                <select class="form-select" id="residentialType" name="residentialType">
+                    <option selected>Choose...</option>
+                    <option value="condo">Condo</option>
+                    <option value="fourFamily">Four Family</option>
+                    <option value="singleFamily">Single Family</option>
+                    <option value="threeFamily">Three Family</option>
+                    <option value="twoFamily">Two Family</option>
+                </select>
+              </div>
+              <button type="submit" value="Predict" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if prediction %}
+    <div class="box">
+      <h1>Predicted Sale Amount: </h1>
+      <p>${{ prediction }}</p>
+    </div>
+  {% endif %}
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+       
